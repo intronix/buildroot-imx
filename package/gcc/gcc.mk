@@ -77,6 +77,7 @@ HOST_GCC_COMMON_CONF_OPTS = \
 	--disable-decimal-float \
 	--enable-plugins \
 	--enable-lto \
+	--disable-libcc1 \
 	--with-gmp=$(HOST_DIR) \
 	--with-mpc=$(HOST_DIR) \
 	--with-mpfr=$(HOST_DIR) \

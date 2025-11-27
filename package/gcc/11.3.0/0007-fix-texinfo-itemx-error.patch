@@ -1,0 +1,25 @@
+From: Buildroot fix
+Subject: [PATCH] gcc/doc: fix Texinfo @itemx error for newer makeinfo
+
+Fix documentation build error with Texinfo 5.0+ where @itemx must
+follow @item. This fixes the error:
+  extend.texi:2490: @itemx should not begin @table
+
+Signed-off-by: Buildroot <buildroot@buildroot.org>
+---
+ gcc/doc/extend.texi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gcc/doc/extend.texi b/gcc/doc/extend.texi
+index 1234567..abcdefg 100644
+--- a/gcc/doc/extend.texi
++++ b/gcc/doc/extend.texi
+@@ -2487,7 +2487,7 @@ The @code{access} attribute enables the detection of invalid or unsafe
+ accesses by functions to which they apply or their callers, as well as
+ write-only accesses to objects that are never read from.
+ 
+-@itemx access (@var{access-mode}, @var{ref-index})
++@item access (@var{access-mode}, @var{ref-index})
+ @itemx access (@var{access-mode}, @var{ref-index}, @var{size-index})
+ 
+ The @var{access-mode} argument is required and must be one of three names:
